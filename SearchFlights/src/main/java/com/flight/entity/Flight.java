@@ -1,5 +1,7 @@
 package com.flight.entity;
 
+import java.sql.Date;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,6 +25,8 @@ private String toloc;
 private int seatCapacity;
 @Column(length=20)
 private int costPerSeat;
+@Column(length=20)
+private Date date1;
 public int getFlightNumber() {
 	return flightNumber;
 }
@@ -34,6 +38,13 @@ public String getFlightName() {
 }
 public void setFlightName(String flightName) {
 	this.flightName = flightName;
+}
+
+public Date getDate1() {
+	return date1;
+}
+public void setDate1(Date date1) {
+	this.date1 = date1;
 }
 public String getFromloc() {
 	return fromloc;
@@ -59,7 +70,10 @@ public int getCostPerSeat() {
 public void setCostPerSeat(int costPerSeat) {
 	this.costPerSeat = costPerSeat;
 }
-public Flight(int flightNumber, String flightName, String fromloc, String toloc, int seatCapacity, int costPerSeat) {
+
+
+public Flight(int flightNumber, String flightName, String fromloc, String toloc, int seatCapacity, int costPerSeat,
+		Date date1) {
 	super();
 	this.flightNumber = flightNumber;
 	this.flightName = flightName;
@@ -67,11 +81,13 @@ public Flight(int flightNumber, String flightName, String fromloc, String toloc,
 	this.toloc = toloc;
 	this.seatCapacity = seatCapacity;
 	this.costPerSeat = costPerSeat;
+	this.date1 = date1;
 }
+
 @Override
 public String toString() {
 	return "Flight [flightNumber=" + flightNumber + ", flightName=" + flightName + ", fromloc=" + fromloc + ", toloc="
-			+ toloc + ", seatCapacity=" + seatCapacity + ", costPerSeat=" + costPerSeat + "]";
+			+ toloc + ", seatCapacity=" + seatCapacity + ", costPerSeat=" + costPerSeat + ", date1=" + date1 + "]";
 }
 public Flight()  {
 	

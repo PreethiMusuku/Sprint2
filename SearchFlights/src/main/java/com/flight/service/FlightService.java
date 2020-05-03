@@ -1,5 +1,6 @@
 package com.flight.service;
 
+import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,9 +16,9 @@ public class FlightService implements FlightServiceImpl{
 	private FlightDao flightDao;
 
 	@Override
-	public List<Flight> findFlight(String fromloc,String toloc) {
+	public List<Flight> findFlight(String fromloc,String toloc, Date date1) {
 		// TODO Auto-generated method stub
-		return flightDao.findFlight(fromloc,toloc);
+		return flightDao.findFlight(fromloc,toloc,date1);
 	}
 
 	public List<Flight> fetchFlights() {
