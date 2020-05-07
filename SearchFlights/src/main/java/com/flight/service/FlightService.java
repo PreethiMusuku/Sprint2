@@ -17,14 +17,9 @@ public class FlightService implements FlightServiceImpl{
 
 	@Override
 	public List<Flight> findFlight(String fromloc,String toloc, Date date1) {
-		// TODO Auto-generated method stub
 		return flightDao.findFlight(fromloc,toloc,date1);
 	}
 
-	public List<Flight> fetchFlights() {
-		// TODO Auto-generated method stub
-		return flightDao.findAll();
-	}
 }
 	
 	

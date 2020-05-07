@@ -13,19 +13,19 @@ import javax.persistence.Table;
 public class Flight {
 @Id
 @GeneratedValue
-@Column(length=20)
+@Column(length=10)
 private int flightNumber;
-@Column(length=20)
+@Column(length=10)
 private String flightName;
-@Column(length=20)
+@Column(length=10)
 private String fromloc;
-@Column(length=20)
+@Column(length=10)
 private String toloc;
-@Column(length=20)
+@Column(length=10)
 private int seatCapacity;
-@Column(length=20)
+@Column(length=10)
 private int costPerSeat;
-@Column(length=20)
+@Column(length=10)
 private Date date1;
 public int getFlightNumber() {
 	return flightNumber;
