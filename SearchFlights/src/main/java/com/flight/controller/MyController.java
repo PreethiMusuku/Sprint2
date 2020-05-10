@@ -4,13 +4,18 @@ import java.sql.Date;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
-
 import com.flight.entity.Flight;
+import com.flight.exception.RecordNotFound;
 import com.flight.service.FlightService;
 
 @RestController
@@ -21,8 +26,15 @@ public class MyController {
 	private FlightService flightService;
 	
 	@GetMapping("/SearchFlights/{fromloc}/{toloc}/{date1}")
-	public List<Flight> findFlight(@PathVariable String fromloc,@PathVariable String toloc,@PathVariable Date date1) {
-		return flightService.findFlight(fromloc,toloc,date1);
+	public ResponseEntity<List<Flight>> findFlight(@PathVariable String fromloc,@PathVariable String toloc,@PathVariable Date date1) {
+		List<Flight> list = flightService.findFlight(fromloc,toloc,date1);
+		return new ResponseEntity<>(list, new HttpHeaders(), HttpStatus.OK);
+		}
+		
 	
+	@ResponseStatus(value=HttpStatus.NOT_FOUND,reason="Please enter Valid details")
+	@ExceptionHandler(RecordNotFound.class)
+	public ResponseEntity<String> userNotFound(RecordNotFound e) {
+		return new ResponseEntity<>(e.getMessage(), HttpStatus.NOT_FOUND);
 	}
-}
+	}
