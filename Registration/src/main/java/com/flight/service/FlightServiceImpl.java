@@ -4,6 +4,6 @@ import com.flight.entity.Register;
 
 public interface FlightServiceImpl {
 
-	String register(Register reg);
+	 String register(Register reg);
 
 }

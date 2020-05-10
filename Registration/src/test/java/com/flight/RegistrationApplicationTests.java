@@ -25,7 +25,6 @@ import junit.framework.Assert;
 
 @SpringBootTest
 public class RegistrationApplicationTests {
-
 	@SuppressWarnings("deprecation")
 	@Test
 	public void registrationsuccess() throws URISyntaxException {

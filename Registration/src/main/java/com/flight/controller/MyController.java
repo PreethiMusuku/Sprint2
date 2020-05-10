@@ -17,6 +17,8 @@ public class MyController {
 	@Autowired
 	private FlightService flightService;
 	
+	
+	
 	@PostMapping("/RegPage")
 	public String register(@RequestBody Register reg){
 		Register user1 = flightService.findOne(reg.getMailid());

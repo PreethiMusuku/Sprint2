@@ -8,6 +8,7 @@ import com.flight.entity.Register;
 @Repository
 public interface FlightDao extends JpaRepository<Register, Integer> {
 
+
 	public Register findByMailid(String reg);
 	}
 
