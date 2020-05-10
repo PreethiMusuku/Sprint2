@@ -24,7 +24,7 @@ private String username;
 private String password;
 @Column(length=20)
 private String confirmpassword;
-@Column(length=20)
+@Column(unique=true)
 private String mailid;
 @Column(length=20)
 private String phnnumber;

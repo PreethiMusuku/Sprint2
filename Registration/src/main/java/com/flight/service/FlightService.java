@@ -17,4 +17,8 @@ public class FlightService implements FlightServiceImpl{
 	flightDao.save(reg);
 	return "registered successfully";
 	}
+
+	public Register findOne(String reg) {
+		return flightDao.findByMailid(reg);
+	}
 }

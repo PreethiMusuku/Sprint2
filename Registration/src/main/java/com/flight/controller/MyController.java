@@ -19,7 +19,18 @@ public class MyController {
 	
 	@PostMapping("/RegPage")
 	public String register(@RequestBody Register reg){
-		flightService.register(reg);
+		Register user1 = flightService.findOne(reg.getMailid());
+		 if (user1!=null)
+		    {
+			 return "User exists with same MailId!!";
+		    }
+		    else {
+
+		    	 flightService.register(reg);
+
+		    }
+
+		
 		return "Registered successfully";
 	}
 }
