@@ -7,5 +7,6 @@ public class RecordNotFound extends  RuntimeException{
 	}
 	public RecordNotFound(String msg,Throwable e){
         super(msg,e);
-    }
+ 
+	}
 }

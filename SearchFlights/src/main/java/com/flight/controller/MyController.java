@@ -30,7 +30,6 @@ public class MyController {
 		List<Flight> list = flightService.findFlight(fromloc,toloc,date1);
 		return new ResponseEntity<>(list, new HttpHeaders(), HttpStatus.OK);
 		}
-		
 	
 	@ResponseStatus(value=HttpStatus.NOT_FOUND,reason="Please enter Valid details")
 	@ExceptionHandler(RecordNotFound.class)

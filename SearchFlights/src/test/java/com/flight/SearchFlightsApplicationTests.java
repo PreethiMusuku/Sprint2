@@ -18,6 +18,7 @@ public class SearchFlightsApplicationTests {
 @Autowired
 	private FlightService flightService;
 	
+
   @Test(expected=NullPointerException.class)
   
   public void searchtestsuccess() throws Exception {
